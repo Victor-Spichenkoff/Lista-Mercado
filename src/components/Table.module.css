@@ -1,0 +1,72 @@
+.table{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 2vw;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.head{
+    width: 69vw;
+    /* background-color: #4BDECA; */
+    background: linear-gradient(90deg, #4BDECA, #44EB76);
+    font-size: 4vh;
+
+}   
+
+.head>td {
+    padding: 10px;
+}
+
+.tr>td{
+    padding: 10px;
+}
+
+.last{
+    border-top-right-radius: 10px;
+}
+.first{
+    border-top-left-radius: 10px;
+}
+
+
+tbody>.tr:nth-child(even){
+    padding: 10px;
+    background-color: rgba(236, 236, 236, 0.87);
+}
+tbody>.tr:nth-child(odd){
+    padding: 10px;
+    background-color: rgba(218, 216, 216, 0.87);
+}
+
+
+.chekbox{
+    width: 2vw;
+    height: 2vw;
+    margin: 0px;
+    cursor: pointer;
+}
+
+
+.edit{
+    color: #04860f;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    width: 40px;
+    height: 40px;
+}
+.delete{
+    color: #a10b0b;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    width: 40px;
+    height: 40px;
+}
+
+.edit:hover, .delete:hover{
+    border-radius: 300px;
+    background-color: rgb(202, 199, 171);
+}
+
+/* https://color.adobe.com/pt/create/color-wheel */

@@ -1,0 +1,25 @@
+html, body{
+  margin: 0px;
+  padding: 0px;
+  background-color: rgb(8, 122, 214);
+}
+
+
+.list-area {
+  background-color: white;
+  box-shadow: 0px 2px 5px 1px black;
+  width: 70vw;
+  margin: auto;
+  margin-top: 200px;
+  border-radius: 7px;
+  padding: 20px;
+
+}
+
+
+
+.list-actions {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+}
+
