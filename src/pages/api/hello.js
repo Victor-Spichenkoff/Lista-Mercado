@@ -1,5 +1,12 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+const fs = require('fs');
 
-export default function handler(req, res) {
-  res.status(200).json({ name: 'John Doe' })
+export default async function handler(req, res) {
+  const caminho = './products.json'
+  let products
+   fs.readFile(caminho, 'utf-8', (e, conteudo ) => {
+    // const obj = JSON.parse(conteudo)
+    // products = obj
+    console.log(products)
+    res.status(200).json({ conteudo })
+})
 }

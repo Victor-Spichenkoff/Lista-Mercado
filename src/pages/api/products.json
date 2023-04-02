@@ -1,0 +1,13 @@
+{
+    "products": [
+        {"name": "Coca-Cola", "price": 10.25, "added":false, "units":2},
+        {"name": "Soda", "price": 5, "added":false, "units":6},
+        {"name": "Coca-Cola", "price": 10.25, "added":false, "units":2},
+        {"name": "Soda", "price": 5, "added":false, "units":6},
+        {"name": "Coca-Cola", "price": 10.25, "added":false, "units":2},
+        {"name": "Soda", "price": 5, "added":false, "units":6},
+        {"name": "Coca-Cola", "price": 10.25, "added":false, "units":2},
+        {"name": "Soda", "price": 5, "added":false, "units":6}
+
+    ]
+}

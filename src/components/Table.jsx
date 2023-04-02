@@ -35,7 +35,7 @@ export default function Table(props) {
 
 
     const [endPrice, setFinalPrice] = useState(0)
-    // const [finalUnits, setFinalUnits] = useState(0)
+    const [finalUnits, setFinalUnits] = useState(0)
 
 
     async function calculateFinalPrice(changeState=true) {
@@ -53,10 +53,10 @@ export default function Table(props) {
 
 
     // let endPrice = 0
-    let endUnits= 0
+    // let endUnits= 0
 
     function createRows() {
-        useEffect(()=>  calculateFinalPrice())
+        useEffect(()=> {calculateFinalPrice()})
 
 
 
@@ -91,6 +91,7 @@ export default function Table(props) {
 
             function toggleAdded() {
                 added ? setAdded(false) : setAdded(true)
+                added ? product.added=false : product.added=true
             }
 
 
@@ -112,28 +113,43 @@ export default function Table(props) {
     }
 
     const [balance, setBalance] = useState(0)
+
     function getBalance(){
-        let fp = calculateFinalPrice(changeState=false)
+        calculateFinalPrice()
+        let fp = endPrice
         let b = props.maxSpend - fp
         setBalance(b)
     }
 
 
-    function updateInfos() {
-        useEffect(()=>{
-            getBalance()
+    function updateUnits() {
+        let units = 0
+        props.products.map(p => {
+            if(p.added){
+                units+=p.units
+            }
         })
+        setFinalUnits(units)
     }
+
+
+    function updateInfos() {
+        // useEffect(()=>{
+            getBalance()
+            updateUnits()
+        // })
+    }
+    useEffect(()=>{updateInfos()})
 
     return (
         <>
-            <table className={style.table} /*onClick={updateInfos}*/>
+            <table className={style.table} onClick={updateInfos}>
                 {createHead()}
                 <tbody>
                     {createRows()}
                 </tbody>
             </table>
-            <Resume finalPrice={endPrice} finalUnits={endUnits} balance={balance}/>
+            <Resume finalPrice={endPrice} finalUnits={finalUnits} balance={balance}/>
             
         </>
     )
