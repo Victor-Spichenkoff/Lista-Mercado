@@ -56,7 +56,7 @@ export default function Table(props) {
     // let endUnits= 0
 
     function createRows() {
-        useEffect(()=> {calculateFinalPrice()})
+        useEffect(()=> {calculateFinalPrice()}, [])
 
 
 
@@ -147,6 +147,7 @@ export default function Table(props) {
                 {createHead()}
                 <tbody>
                     {createRows()}
+                    {/* {useEffect(createRows)} */}
                 </tbody>
             </table>
             <Resume finalPrice={endPrice} finalUnits={finalUnits} balance={balance}/>
