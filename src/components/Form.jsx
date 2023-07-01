@@ -18,20 +18,42 @@ export default function Form(props) {
     //     id_purchase = props.product.id_purchase ?? 2
     //     id = props.product.id = props.product.id ?? undefined
     // }, [])
-    const [product, setProduct] = useState(props.product?? {name:'', price: 0, units: 0})
+    const [product, setProduct] = useState(props.product?? {})//{name:'', price: 0, units: 0})
 
     function save() {
-        setProduct({name: product.name, price: product.price ,units: product.units, id_purchase: id_purchase, id})//remonta ele
-
+        setProduct({name: product.name??'Não Informado', price: product.price??1 ,units: product.units??1, id_purchase: id_purchase, id})//remonta ele
+        const productFormated = {
+            name: product.name,
+            price: Number(product.price),
+            units: parseInt(product.units),
+            id: Number(product.id),
+            id_purchase: Number(product.id_purchase),
+        }
         if(id) {//editar
             console.log(product)
-            axios.put(`${baseUrl}/products/updateOne`, product)
+            axios.put(`${baseUrl}/products/updateOne`, productFormated)
                 .then(()=>console.log('Atualizado'))
         } else { 
-            axios.post(`${baseUrl}/products`, product)
+            axios.post(`${baseUrl}/products`, productFormated)
         }
-        props.reload(Math.random()*Math.random())
-        props.setShowForm(false)
+        setTimeout(()=> {
+            props.reload(Math.random()*Math.random())
+            props.setShowForm(false)
+        }, 70)
+        setTimeout(()=> {
+            props.reload(Math.random()*Math.random())
+        }, 1000)
+        setTimeout(()=> {
+            props.reload(Math.random()*Math.random())
+        }, 2000)
+    }
+
+    window.onkeydown = (e) => {
+        const key = e.key
+
+        if(key == 'Enter') {
+            save()
+        }
     }
 
     return (

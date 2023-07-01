@@ -11,6 +11,7 @@ import {baseUrl, productsKey} from '@/global'
 
 export default function Table(props) {
 
+
     //passar: array com todos os produtos;  mudar o showForm
 
 
@@ -28,6 +29,7 @@ export default function Table(props) {
 
 
     function createActions(product) {
+
         return (
             <>
             <button className={style.edit}
@@ -38,11 +40,15 @@ export default function Table(props) {
             >
                 {EditIcon}
             </button>
+
             <button className={style.delete}
-                onClick={()=> {
+            
+                onClick={(e)=> {
+                    // props.setSelectedProduct(product)
+                    axios.delete(`${baseUrl}/products/delete/${product.id}`)
                     console.log(product)
-                    axios.delete(`${baseUrl}/products`, product)
                     props.reload(Math.random()*Math.random())
+                    setTimeout(()=> props.reload(Math.random()*Math.random()), 1000)
                 }}
             >
                 {DeleteIcon}
@@ -93,7 +99,6 @@ export default function Table(props) {
                 axios.put(`${baseUrl}/products/updateOne`, product)
                 // added ? setAdded(false) : setAdded(true)
             }
-
 
             return (
                 <tr /*key={product.added}*/ className={style.tr}>

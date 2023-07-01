@@ -49,7 +49,7 @@ export default function List() {
     const [products, setProducts] = useState([])
     const [selectedProduct, setSelectedProduct] = useState({name:'', price: 0, units: 0})
     const [showForm, setShowForm] = useState(false)
-    const [idPurchase, setIdPurchase] = useState(idPurchaseStoraged)
+    const [idPurchase, setIdPurchase] = useState(idPurchaseStoraged?? 2)
     const [maxSpend, setMaxSpend] = useState('')
 
     useEffect(()=>{
@@ -143,11 +143,11 @@ export default function List() {
     const [loadAgain, setLoadAgain] = useState(0)
     try{
         useEffect(()=> {
-            axios.get(`${baseUrl}/products/1`)
+            axios.get(`${baseUrl}/products/${idPurchase}`)
             .then(res => setProducts(res.data))
             .then(console.log('Carregado'))
 
-        }, [loadAgain, idPurchase])
+        }, [loadAgain, idPurchase, showForm])
     } finally {
 
 
@@ -219,7 +219,8 @@ export default function List() {
                 onChange={finalPrice}
                 reload = {setLoadAgain} 
                 setShowForm={setShowForm} 
-                setSelectedProduct={setSelectedProduct}/>
+                setSelectedProduct={setSelectedProduct}
+                product={selectedProduct}/>
                 </>)}
         </div>
     )

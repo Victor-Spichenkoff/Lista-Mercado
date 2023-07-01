@@ -1,14 +1,14 @@
 module.exports = app => {
-    app.get('/products/:id', app.functions.products.getAllById)
-
+    app.delete('/products/delete/:id', app.functions.products.deletar)
+    
+    app.put('/products/updateOne', app.functions.products.updateProduct)
+    
     app.post('/products', app.functions.products.createProduct)
 
-    app.delete('/products', app.functions.products.remove)
+    app.get('/products/:id', app.functions.products.getAllById)
 
-    app.put('/products/updateOne', app.functions.products.updateProduct)
 
     app.use((req, res)=>{
         res.status(500).send('Serviço não encontrado')
     })
-    
 }
