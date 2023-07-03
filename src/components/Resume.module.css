@@ -16,12 +16,32 @@
 
 .head>td {
     padding: 10px;
+    text-align: center;
 }
 
+.tr>td {
+    text-align: center;
+}
 
 .last{
     border-top-right-radius: 10px;
 }
 .first{
     border-top-left-radius: 10px;
+}
+
+
+
+@media (max-width: 680px) {
+    .table{
+      width:100vw;
+    }
+
+    .head{
+        font-size: medium;
+    }
+
+    .tr>td {
+        font-size: 15px;
+    }
 }

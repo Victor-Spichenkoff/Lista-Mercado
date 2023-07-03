@@ -16,10 +16,12 @@
 
 .head>td {
     padding: 10px;
+    text-align: center;
 }
 
 .tr>td{
     padding: 10px;
+    text-align: center;
 }
 
 .last{
@@ -67,5 +69,35 @@ tbody>.tr:nth-child(odd){
     border-radius: 300px;
     background-color: rgb(202, 199, 171);
 }
+
+@media (max-width: 680px) {
+    .table{
+      width:100vw;
+    }
+
+    .head{
+        font-size: medium;
+    }
+
+    .head>td {
+        padding: 3px;
+    }
+    
+    .tr>td{
+        padding: 3px;
+        font-size: 15px;
+    }
+
+    .edit, .delete{
+        width: 30px;
+        height: 30px;
+    }
+
+    .chekbox{
+        width: 4vw;
+        height: 4vw;
+    }
+}
+
 
 /* https://color.adobe.com/pt/create/color-wheel */

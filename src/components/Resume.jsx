@@ -15,7 +15,7 @@ export default function Resume(props){
                 <td className={style.last}>Saldo</td>
             </thead>
             <tbody>
-                <tr>
+                <tr className={style.tr}>
                     <td>Dados da Compra</td>
                     <td>{props.finalUnits}</td>
                     <td>R$ {props.finalPrice.toFixed(2).replace('.', ',')}</td>

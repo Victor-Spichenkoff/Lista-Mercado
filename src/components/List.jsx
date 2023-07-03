@@ -10,8 +10,8 @@ import Form from "./Form"
 
 
 export default function List() {
-    let idPurchaseStoraged
-    let maxSpendStoraged
+    let idPurchaseStoraged 
+    let maxSpendStoraged 
     // useEffect(()=>{
     //     idPurchaseStoraged = Number(localStorage.getItem('idPurchaseStoraged'))
     //     maxSpendStoraged = Number(localStorage.getItem('maxSpendStoraged'))
@@ -148,6 +148,15 @@ export default function List() {
             .then(console.log('Carregado'))
 
         }, [loadAgain, idPurchase, showForm])
+
+        useEffect(()=>{
+            setTimeout(async ()=>{
+                console.log(idPurchase)
+                await axios.get(`${baseUrl}/products/${idPurchase}`)
+                .then(res => setProducts(res.data))
+                .then(console.log('Carregado'))
+            }, 4000)
+        }, [])
     } finally {
 
 

@@ -8,6 +8,7 @@ import s from './Form.module.css'
 import axios from "axios"
 import { baseUrl } from "@/global"
 
+let vezes = 0
 
 export default function Form(props) {
 
@@ -39,19 +40,23 @@ export default function Form(props) {
         setTimeout(()=> {
             props.reload(Math.random()*Math.random())
             props.setShowForm(false)
-        }, 70)
+        }, 400)
+        // setTimeout(()=> {
+        //     props.reload(Math.random()*Math.random())
+        // }, 1000)
         setTimeout(()=> {
             props.reload(Math.random()*Math.random())
-        }, 1000)
-        setTimeout(()=> {
-            props.reload(Math.random()*Math.random())
+            console.log('Carregado pela: ' + (++vezes))
         }, 2000)
+        setTimeout(()=> {
+            props.reload(Math.random()*Math.random())
+        }, 4000)
     }
-
+    
     window.onkeydown = (e) => {
         const key = e.key
 
-        if(key == 'Enter') {
+        if(key == 'Enter' ) {
             save()
         }
     }

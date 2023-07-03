@@ -23,6 +23,7 @@ html, body{
   grid-template-columns: 210px 1fr 9vw;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 input[type=number]::-webkit-inner-spin-button { 
@@ -44,8 +45,11 @@ label{
 }
 
 
-.deleting {
-  background-color: red;
+
+
+@media (max-width: 680px) {
+    .list-area{
+      width:99.5vw;
+      margin-left: 0.73vw;
+    }
 }
-
-

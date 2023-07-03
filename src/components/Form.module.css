@@ -50,3 +50,15 @@
     text-align: center;
     margin-bottom: 40px;
 }
+
+@media (max-width: 680px) {
+    .save, .cancel {
+        width: 18vw;
+        padding: 4px;
+    }
+
+    .group > input:focus {
+        border-bottom: 10px black solid;
+        outline: black 2px;
+    }
+}
