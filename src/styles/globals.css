@@ -13,7 +13,7 @@ html, body{
   margin-top: 120px;
   border-radius: 7px;
   padding: 20px;
-
+  margin-bottom: 67px;
 }
 
 
@@ -21,8 +21,35 @@ html, body{
 .list-actions {
   display: grid;
   grid-template-columns: 210px 1fr 9vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 input[type=number]::-webkit-inner-spin-button { 
     -webkit-appearance: none;
+}
+
+input{
+  height: 3vh;
+  border: none;
+  border-bottom: 2px solid black;
+  background: none;
+  transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+
+label{
+  display: block;
+}
+
+
+
+
+@media (max-width: 680px) {
+    .list-area{
+      width:99.5vw;
+      margin-left: 0.73vw;
+    }
 }
