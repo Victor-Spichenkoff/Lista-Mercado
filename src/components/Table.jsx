@@ -102,20 +102,20 @@ export default function Table(props) {
             }
 
             return (
-                <React.Fragment key={key++}>
-                <tr /*key={product.added}*/ className={style.tr}>
+                
+                <tr key={product.id} className={style.tr}>
                     <td>
                         <input type="checkbox" checked={added} 
                             onClick={() => toggleAdded()}
                             className={style.chekbox}
+                            key={key++}
                         />
                         </td>
-                    <td>{product.name}</td>
-                    <td>{product.units}</td>
-                    <td>{finalPrice}</td>
-                    <td>{createActions(product)}</td>
+                    <td key={product.name}>{product.name}</td>
+                    <td key={Math.random()*Math.random()}>{product.units}</td>
+                    <td key={Math.random()*Math.random()}>{finalPrice}</td>
+                    <td key={Math.random()*Math.random()}>{createActions(product)}</td>
                 </tr>
-                </React.Fragment>
             )
         })//som se receber os clientes
     }
