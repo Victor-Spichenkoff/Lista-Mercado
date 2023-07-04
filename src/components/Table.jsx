@@ -81,7 +81,7 @@ export default function Table(props) {
     function createRows() {
         // useEffect(()=> {calculateFinalPrice()})
         calculateFinalPrice()
-
+        let key = 0
 
 
         return props.products.map((product,i) => {
@@ -102,7 +102,7 @@ export default function Table(props) {
             }
 
             return (
-                <React.Fragment key={product.id}>
+                <React.Fragment key={key++}>
                 <tr /*key={product.added}*/ className={style.tr}>
                     <td>
                         <input type="checkbox" checked={added} 
