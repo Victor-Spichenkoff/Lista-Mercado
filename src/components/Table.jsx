@@ -103,7 +103,7 @@ export default function Table(props) {
             }
 
             return (
-                <Fragment key={product.id}>
+                <Fragment key={i}>
                 <tr className={style.tr}>
                     <td>
                         <input type="checkbox" checked={added} 
