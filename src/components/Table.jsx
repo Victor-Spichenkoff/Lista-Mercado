@@ -102,8 +102,13 @@ export default function Table(props) {
             }
 
             return (
+
+
+
                 
-                <tr key={product.id} className={style.tr}>
+                
+                <div key={product.id}>
+                <tr className={style.tr}>
                     <td>
                         <input type="checkbox" checked={added} 
                             onClick={() => toggleAdded()}
@@ -115,6 +120,8 @@ export default function Table(props) {
                     <td>{finalPrice}</td>
                     <td>{createActions(product)}</td>
                 </tr>
+                </div>
+
             )
         })//som se receber os clientes
     }
