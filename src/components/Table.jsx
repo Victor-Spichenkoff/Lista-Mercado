@@ -103,7 +103,7 @@ export default function Table(props) {
 
             return (
                 <React.Fragment key={product.id}>
-                <tr key={product.added} className={style.tr}>
+                <tr /*key={product.added}*/ className={style.tr}>
                     <td>
                         <input type="checkbox" checked={added} 
                             onClick={() => toggleAdded()}
