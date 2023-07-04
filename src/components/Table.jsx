@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback, useContext } from 'react'
+import { useEffect, useState, useCallback, useContext, Fragment } from 'react'
 import style from './Table.module.css'
 import { DeleteIcon } from './Icons'
 import { EditIcon } from './Icons'
@@ -6,6 +6,7 @@ import Resume from './Resume'
 import ProductRow from './productRow'
 import axios from 'axios'
 import {baseUrl, productsKey} from '@/global'
+
 
 
 
@@ -79,8 +80,8 @@ export default function Table(props) {
     // let endUnits= 0
 
     function createRows() {
-        // useEffect(()=> {calculateFinalPrice()})
-        calculateFinalPrice()
+        useEffect(()=> {calculateFinalPrice()})
+        // calculateFinalPrice()
 
 
 
@@ -102,7 +103,7 @@ export default function Table(props) {
             }
 
             return (
-                <div key={product.id}>
+                <Fragment key={product.id}>
                 <tr className={style.tr}>
                     <td>
                         <input type="checkbox" checked={added} 
@@ -115,7 +116,7 @@ export default function Table(props) {
                     <td>{finalPrice}</td>
                     <td>{createActions(product)}</td>
                 </tr>
-                </div>
+                </Fragment>
 
             )
         })//som se receber os clientes
