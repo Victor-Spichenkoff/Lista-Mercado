@@ -79,7 +79,8 @@ export default function Table(props) {
     // let endUnits= 0
 
     function createRows() {
-        useEffect(()=> {calculateFinalPrice()})
+        // useEffect(()=> {calculateFinalPrice()})
+        calculateFinalPrice()
 
 
 
