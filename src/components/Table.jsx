@@ -102,7 +102,7 @@ export default function Table(props) {
             }
 
             return (
-                <tr /*key={product.added}*/ className={style.tr}>
+                <tr key={product.added} className={style.tr}>
                     <td>
                         <input type="checkbox" checked={added} 
                             onClick={() => toggleAdded()}
