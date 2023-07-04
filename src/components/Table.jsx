@@ -108,13 +108,12 @@ export default function Table(props) {
                         <input type="checkbox" checked={added} 
                             onClick={() => toggleAdded()}
                             className={style.chekbox}
-                            key={key++}
                         />
                         </td>
-                    <td key={product.name}>{product.name}</td>
-                    <td key={Math.random()*Math.random()}>{product.units}</td>
-                    <td key={Math.random()*Math.random()}>{finalPrice}</td>
-                    <td key={Math.random()*Math.random()}>{createActions(product)}</td>
+                    <td>{product.name}</td>
+                    <td>{product.units}</td>
+                    <td>{finalPrice}</td>
+                    <td>{createActions(product)}</td>
                 </tr>
             )
         })//som se receber os clientes
