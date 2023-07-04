@@ -101,11 +101,15 @@ export default function Table(props) {
                 // added ? setAdded(false) : setAdded(true)
             }
 
+
+
+
+            
             return (
 
 
 
-                
+
                 
                 <div key={product.id}>
                 <tr className={style.tr}>
