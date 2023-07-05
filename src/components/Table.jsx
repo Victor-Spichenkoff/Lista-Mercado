@@ -105,7 +105,7 @@ export default function Table(props) {
 
 
             return (
-                <tr key={key={`${product.id}+${index}`}} className={style.tr}>
+                <tr key={`${product.id}+${i}`} className={style.tr}>
                     <td>
                         <input type="checkbox" checked={added} 
                             onClick={() => toggleAdded()}
