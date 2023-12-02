@@ -6,12 +6,12 @@ import axios, { Axios } from 'axios'
 import {baseUrl} from '@/global'
 import Form from "./Form"
 
-
+var firstRealRequest = false
 
 
 export default function List() {
-    let idPurchaseStoraged 
-    let maxSpendStoraged 
+    var idPurchaseStoraged 
+    var maxSpendStoraged 
     // useEffect(()=>{
     //     idPurchaseStoraged = Number(localStorage.getItem('idPurchaseStoraged'))
     //     maxSpendStoraged = Number(localStorage.getItem('maxSpendStoraged'))
@@ -53,9 +53,10 @@ export default function List() {
     const [maxSpend, setMaxSpend] = useState('')
 
     useEffect(()=>{
-        setIdPurchase(Number(localStorage.getItem('idPurchaseStoraged')))
-        setMaxSpend(Number(localStorage.getItem('maxSpendStoraged')))
-        console.log(idPurchaseStoraged, maxSpendStoraged)
+        setIdPurchase(Number(localStorage.getItem('idPurchaseStoraged')) ?? 2)
+        setMaxSpend(Number(localStorage.getItem('maxSpendStoraged')) ?? 0)
+        console.log(idPurchase)
+        // console.log(idPurchaseStoraged, maxSpendStoraged)
     }, [])
 
     // setProducts([
@@ -140,23 +141,36 @@ export default function List() {
     //         "added": false
     //     }
     // ])
-    const [loadAgain, setLoadAgain] = useState(0)
-    try{
-        useEffect(()=> {
-            axios.get(`${baseUrl}/products/${idPurchase}`)
-            .then(res => setProducts(res.data))
-            .then(console.log('Carregado'))
+    const [loadAgain, setLoadAgain] = useState(0)//após excluir
+    useEffect(()=> {
+        console.log('show form mudou', idPurchase)
+        axios.get(`${baseUrl}/products/${idPurchase}`)
+        .then(res => setProducts(res.data))
+        .then(console.log(products))
+        .catch(e => console.log('erro: ' + e))
+    }, [idPurchase, showForm, loadAgain])
 
-        }, [loadAgain, idPurchase, showForm])
+    try{
+        // useEffect(()=> {
+        //     axios.get(`${baseUrl}/products/${idPurchase}`)
+        //     .then(res => setProducts(res.data))
+        //     .then(console.log('Carregado'))
+
+        // }, [loadAgain, idPurchase, showForm])
 
         useEffect(()=>{
             setTimeout(async ()=>{
-                console.log(idPurchase)
+                // console.log(idPurchase)
+                if (idPurchase == 2) return
+                if (firstRealRequest) return
+                firstRealRequest = true
+
                 await axios.get(`${baseUrl}/products/${idPurchase}`)
                 .then(res => setProducts(res.data))
-                .then(console.log('Carregado'))
-            }, 4000)
-        }, [])
+                .then(console.log('4000: ' + idPurchase))
+            }, 2000)
+        }, [idPurchase])
+        console.log()
     } finally {
 
 
@@ -168,28 +182,7 @@ export default function List() {
         })
     }
 
-    // return useCallback(()=> {
-    //     return (
-        
-    //     <div className="list-area">
-    //         <h1 className={s.h1}>Lista</h1>
-    //         <div className="list-actions">
-    //             <div className={s.rs}>R$<input placeholder="Valor Máximo" type='number'
-    //                 className={s.maxValue}
-    //                 id={'maxSpend'}
-    //                 value={maxSpend}
-    //                 onChange={(e)=>setMaxSpend(e.target.value)}
-    //             />  
-    //             </div> <p></p>
-    //             <button className={s.newItem}>Novo Item</button>
-    //         </div>
-    //         <Table products={products} balance={balance}
-    //         maxSpend={maxSpend}
-    //         onChange={finalPrice}
-    //         ></Table>
-            
-    //     </div>
-    // )}, [products])
+ 
 
     return (
         <div className="list-area">

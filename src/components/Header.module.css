@@ -12,7 +12,7 @@
 }
 
 .div{
-    width: 100vw;
+    width: calc(100vw - 5px);
 }
 
 @media (max-width: 680px) {
