@@ -143,7 +143,8 @@ export default function List() {
     // ])
     const [loadAgain, setLoadAgain] = useState(0)//após excluir
     useEffect(()=> {
-        console.log('show form mudou', idPurchase)
+        if (idPurchase == 2) return
+
         axios.get(`${baseUrl}/products/${idPurchase}`)
         .then(res => setProducts(res.data))
         .then(console.log(products))
