@@ -1,38 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1>Lista de Compras (English version below)</h1>
 
-## Getting Started
+<hr>
 
-First, run the development server:
+<a href="https://victor-spichenkoff.github.io/Lista-Mercado/">Visite aqui</a>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+<h2>Projeto para treinar o uso de Backend e Banco de Dados</h2>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<p>OBS: Eu sei que exitiam métodos melhores para realizar esse projeto, no entanto, optei por fazê-lo assim afim de compreender melhor tais Tecnologias utilizadas</p>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<p>Tecnologias usadas: </p>
+<li>Next.js para o frontend</li>
+<li>Express para o Backend</li>
+<li>Cosign para integrar a API</li>
+<li>Prisma para conectar ao Banco de Dados</li>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<br>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<p>Recursos</p>
+<li>Recurso único: Adicionar uma quantia limite de gasto</li>
+<li>Criar, editar e deletar</li>
+<li>Adicionar ao carrinho e acompanhar o quanto foi gasto</li>
+<li>Possibilidade de usar várias listas diferentes</li>
+<li>Tudo é salvo na nuvem, permitindo continuar depois</li>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<br><br>
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+<h1>Shopping List</h1>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<h>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<a href="https://victor-spichenkoff.github.io/Lista-Mercado/">Visit here</a>
 
-## Deploy on Vercel
+<h2>Project to train the use of Backend and Database</h2>
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<p>NOTE: I know that there were better methods for this project, however, I chose to do it this way in order to better understand the technologies used</p>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<p>Technologies used: </p>
+<li>Next.js for front-end</li>
+<li>Express for backend</li>
+<li>Cosign to integrate an API</li>
+<li>Prisma to connect to the Database</li>
+
+<br>
+
+<p>Resources:</p>
+<li>Unique feature: Add a spending limit</li>
+<li>Create, edit and delete</li>
+<li>Add to cart and track how much was spent</li>
+<li>Possibility of using several different lists</li>
+<li>Everything is saved in the cloud, allowing you to continue later</li>
